@@ -53,7 +53,6 @@ const soundsName = {
   k: "tom-3",
   l: "tom-4",
 };
-
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     for (key in soundsName) {
@@ -67,9 +66,7 @@ buttons.forEach((button) => {
 
 document.addEventListener("keydown", (e) => {
   for (key in soundsName) {
-    if (e.key == key) {
-      let sound = new Audio(`./sounds/${soundsName[key]}.mp3`);
-      sound.play();
-    }
+    let sound = new Audio(`./sounds/${soundsName[key]}.mp3`);
+    sound.play();
   }
 });
