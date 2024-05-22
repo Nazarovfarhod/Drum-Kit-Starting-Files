@@ -67,6 +67,14 @@ buttons.forEach((button) => {
 document.addEventListener("keydown", (e) => {
   for (key in soundsName) {
     if (e.key == key) {
+      buttons.forEach((btn) => {
+        if (btn.textContent == key) {
+          btn.classList.add("bigAnimation");
+          setTimeout(() => {
+            btn.classList.remove("bigAnimation");
+          }, 100);
+        }
+      });
       let sound = new Audio(`./sounds/${soundsName[key]}.mp3`);
       sound.play();
     }
