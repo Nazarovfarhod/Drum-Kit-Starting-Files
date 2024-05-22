@@ -66,7 +66,9 @@ buttons.forEach((button) => {
 
 document.addEventListener("keydown", (e) => {
   for (key in soundsName) {
-    let sound = new Audio(`./sounds/${soundsName[key]}.mp3`);
-    sound.play();
+    if (e.key == key) {
+      let sound = new Audio(`./sounds/${soundsName[key]}.mp3`);
+      sound.play();
+    }
   }
 });
